@@ -1,0 +1,14 @@
+{
+  "id": "example-config-path-independent-of-cwd",
+  "title": "Synthetic example: resolve project config independently of the launch directory",
+  "tags": ["synthetic-example", "config", "cwd", "relative-path", "配置路径"],
+  "problem": "SYNTHETIC EXAMPLE ONLY. A fictional config loader works from the project root but reports a missing configuration when started from a nested directory. This is not an observed finding in the user's workspace.",
+  "rootCause": "In this fictional scenario, the loader resolves a project-relative config name against the process working directory instead of the explicit project root. The two directories coincide in the original tests, hiding the assumption.",
+  "resolution": "Resolve that project-relative name against the provided project root and add a regression that launches the loader from a nested directory. Keep deliberately cwd-relative user inputs under their own documented contract.",
+  "whenToUse": "Consider this hypothesis when a project-relative config succeeds from the root and fails after changing the launch directory. It does not apply to paths intentionally defined relative to cwd, nor does it establish the cause without inspecting the loader.",
+  "verification": {
+    "command": "node --test test/config-loader.test.mjs",
+    "result": "SYNTHETIC, NOT EXECUTED. A real record must replace this text with observed outcomes covering both project-root and nested-directory launches. No verification or performance claim is made by this example."
+  },
+  "files": ["src/config-loader.mjs", "test/config-loader.test.mjs"]
+}

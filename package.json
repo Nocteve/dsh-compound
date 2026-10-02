@@ -1,0 +1,22 @@
+{
+  "name": "dsh-compound",
+  "version": "0.1.0",
+  "description": "Project-local verified-experience capture and recall skills for DeepSeek Harness",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": { ".": "./index.mjs", "./package.json": "./package.json" },
+  "bin": { "dsh-compound": "./bin/compound.mjs" },
+  "files": ["index.mjs", "cordis.patch.yml", "bin", "lib", "skills", "examples", "docs/record-format.md", "docs/manual-evaluation.md", "docs/validation.md", "docs/demo-transcript.md", "scripts", "tests", "THIRD_PARTY_NOTICES.md"],
+  "engines": { "node": ">=22.19.0" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Nocteve/dsh-compound.git" },
+  "homepage": "https://github.com/Nocteve/dsh-compound#readme",
+  "bugs": { "url": "https://github.com/Nocteve/dsh-compound/issues" },
+  "keywords": ["dsh-plugin", "deepseek-harness", "agent-skills", "compound-engineering"],
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:host": "node tests/host-integration.mjs",
+    "demo": "node scripts/demo.mjs"
+  },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}

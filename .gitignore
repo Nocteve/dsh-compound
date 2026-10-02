@@ -1,0 +1,4 @@
+*.tgz
+.demo/
+.test-output/
+node_modules/
